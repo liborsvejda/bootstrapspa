@@ -1,0 +1,16 @@
+{
+  "main": {
+    "corsOrigin": "localhost:8080"
+  },
+  "MongoDB": {
+    "url": "mongodb://localhost:27017/",
+    "database": "wepapps"
+  },
+  "MySQL": {
+    "host": "localhost",
+    "user": "root",
+    "password": "root",
+    "database": "webapps",
+    "multipleStatements": true
+  }
+}
