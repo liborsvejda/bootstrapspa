@@ -193,7 +193,7 @@
       nactiStudenty();
     }
     //...Studenti
-    const SIDE_BAR_ITEMS = ["spaserverexample","mongodb","mysql"];
+    const SIDE_BAR_ITEMS = ["bootstrap","spaserverexample","mongodb","mysql"];
     function sideBarSelect(showId) {
       for (let itemId of SIDE_BAR_ITEMS) {
         let e = document.getElementById(itemId);
@@ -213,7 +213,7 @@
       }
     }
     function onload() {
-      sideBarSelect('spaserverexample');
+      sideBarSelect(SIDE_BAR_ITEMS[0]);
       spustPoNacteni();
     }
   </script>
@@ -227,6 +227,7 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading">Ukázky</div>
       <div class="list-group list-group-flush">
+        <a href="JavaScript:sideBarSelect('bootstrap')" class="list-group-item list-group-item-action bg-light">Bootstrap</a>
         <a href="JavaScript:sideBarSelect('spaserverexample')" class="list-group-item list-group-item-action bg-light">spaserverexample</a>
         <a href="JavaScript:sideBarSelect('mongodb')" class="list-group-item list-group-item-action bg-light">CRUD s MongoDB</a>
         <a href="JavaScript:sideBarSelect('mysql')" class="list-group-item list-group-item-action bg-light">CRUD s MySQL</a>
@@ -243,6 +244,13 @@
       </nav>
 
       <div id="container" class="container-fluid">
+          <div id="bootstrap">
+              <h1 class="mt-4">Bootstrap</h1>
+              <p>Tento webík je vytvořen na základě šablony <a href="https://startbootstrap.com/templates/simple-sidebar/" target="_blank">Simple Sidebar</a> a měl by být responzívní.
+                  To znamená, že na menších zařízeních se skryje levý sloupec s nabídkou a objeví se <i>hamburger button</i>. Vyzkoušet to lze v prohlížeči otevřením vývojářských
+                  nástrojů (Ctrl+Shift+I nebo F12) a&nbsp;posouváním svislého dělícího pruhu.
+              </p>
+          </div>
         <div id="spaserverexample">
           <h1 class="mt-4">Příklad použití modulu <a href="https://github.com/liborsvejda/spaserver" target="_blank">spaserver</a></h1>
 
