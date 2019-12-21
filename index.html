@@ -193,7 +193,7 @@
       nactiStudenty();
     }
     //...Studenti
-    const SIDE_BAR_ITEMS = ["bootstrap","spaserverexample","mongodb","mysql"];
+    const SIDE_BAR_ITEMS = ["bootstrap","spaserverexample","textfile","mongodb","mysql"];
     function sideBarSelect(showId) {
       for (let itemId of SIDE_BAR_ITEMS) {
         let e = document.getElementById(itemId);
@@ -207,7 +207,7 @@
       // if (window.matchMedia( "(max-width: 200px)")) {//skrytí sidebaru, pokud je burger vidět
       //   mt.click();
       // }
-      if (showId === "mongodb" || showId === "mysql") {
+      if (showId === "textfile" || showId === "mongodb" || showId === "mysql") {
         dbEngine = showId;
         spustPoNacteniStudenti();
       }
@@ -229,6 +229,7 @@
       <div class="list-group list-group-flush">
         <a href="JavaScript:sideBarSelect('bootstrap')" class="list-group-item list-group-item-action bg-light">Bootstrap</a>
         <a href="JavaScript:sideBarSelect('spaserverexample')" class="list-group-item list-group-item-action bg-light">spaserverexample</a>
+        <a href="JavaScript:sideBarSelect('textfile')" class="list-group-item list-group-item-action bg-light">CRUD se souborem</a>
         <a href="JavaScript:sideBarSelect('mongodb')" class="list-group-item list-group-item-action bg-light">CRUD s MongoDB</a>
         <a href="JavaScript:sideBarSelect('mysql')" class="list-group-item list-group-item-action bg-light">CRUD s MySQL</a>
       </div>
@@ -262,9 +263,26 @@
           <img src="res/nodejs.png" title="obrázek">
 
         </div>
+        <div id="textfile">
+          <h1 class="mt-4">Jednoduchá <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete" target="_blank">CRUD</a> aplikace nad textovým souborem</h1>
+
+          <h3>Studenti</h3>
+          <div id="textfile_studenti_edit">
+            <i>Editace reaguje na Enter a Escape.</i>
+            <br><br>
+            <table class="table-edit">
+              <tr><td class="table-edit"><label for="textfile_jmeno">Jméno:</label></td><td class="table-edit"><input type="text" id="textfile_jmeno"></td></tr>
+              <tr><td class="table-edit"><label for="textfile_prijmeni">Příjmení:</label></td><td class="table-edit"><input type="text" id="textfile_prijmeni"></td></tr>
+              <tr><td class="table-edit"></td><td class="table-edit"><input type="button" value="Uložit" onclick="ulozit()"><input type="button" value="Storno" onclick="storno()"></tr>
+            </table>
+          </div>
+          <div id="textfile_studenti_list"></div>
+
+        </div>
         <div id="mongodb">
           <h1 class="mt-4">Jednoduchá <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete" target="_blank">CRUD</a> aplikace nad MongoDB</h1>
 
+          <h3>Studenti</h3>
           <div id="mongodb_studenti_edit">
             <i>Editace reaguje na Enter a Escape.</i>
             <br><br>
@@ -280,6 +298,7 @@
         <div id="mysql">
           <h1 class="mt-4">Jednoduchá <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete" target="_blank">CRUD</a> aplikace nad MySQL</h1>
 
+          <h3>Studenti</h3>
           <div id="mysql_studenti_edit">
             <i>Editace reaguje na Enter a Escape.</i>
             <br><br>

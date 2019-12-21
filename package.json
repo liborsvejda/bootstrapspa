@@ -10,13 +10,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "config": "^3.2.4",
+    "dateformat": "^3.0.3",
     "html-entities": "^1.2.1",
     "mongodb": "^3.3.3",
     "mysql": "^2.17.1",
-    "spaserver": "git+https://github.com/liborsvejda/spaserver.git"
+    "spaserver": "git+https://github.com/liborsvejda/spaserver.git",
+    "uniqid": "^5.2.0"
   },
-  "devDependencies": {
-    "config": "^3.2.4",
-    "dateformat": "^3.0.3"
-  }
+  "devDependencies": {}
 }

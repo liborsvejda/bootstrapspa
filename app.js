@@ -1,6 +1,7 @@
 const createSpaServer = require("spaserver").createSpaServer;
 const apiDenVTydnu = require('./api-denvtydnu').apiDenVTydnu;
 const apiCas = require('./api-cas').apiCas;
+const apiTextFileStudenti = require('./api-textfile-studenti').apiStudenti;
 const apiMongoDBStudenti = require('./api-mongodb-studenti').apiStudenti;
 const apiMySQLStudenti = require('./api-mysql-studenti').apiStudenti;
 
@@ -20,6 +21,8 @@ function processApi(req, res) {
         apiDenVTydnu(req, res, obj);
     } else if (req.pathname === "/cas") {
         apiCas(req, res, obj);
+    } else if (req.pathname.startsWith("/textfile/studenti/")) {
+        apiTextFileStudenti(req, res, obj);
     } else if (req.pathname.startsWith("/mongodb/studenti/")) {
         apiMongoDBStudenti(req, res, obj);
     } else if (req.pathname.startsWith("/mysql/studenti/")) {
